@@ -8,12 +8,12 @@
         <a class="navbar-item" href="/">🐵🙊🙉🙈 GIF BATTLE</a>
       </div>
 
-      <!-- menu -->
+      <!-- menu
       <div class="navbar-menu is-active">
         <div class="navbar-end">
           <a href="/login" class="navbar-item">Login</a>
         </div>
-      </div>
+      </div> -->
 
     </nav>
     </div>
@@ -24,9 +24,7 @@
 export default {
   name: 'Header',
   data() {
-    return {
-      user: null
-    }
+
   },
   created() {
 
