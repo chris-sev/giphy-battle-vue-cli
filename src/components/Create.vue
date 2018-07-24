@@ -19,16 +19,8 @@
         v-model="caption">
 
       <a class="button is-large is-info is-outlined" 
-        v-if="isLoggedIn"
         @click="createCaptionedGif">
           Create The Thing
-      </a>
-
-      <a 
-        class="button is-info is-outlined" 
-        v-if="!isLoggedIn"
-        @click="login">
-          Login to Create
       </a>
 
     </div>
