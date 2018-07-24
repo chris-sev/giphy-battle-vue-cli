@@ -13,14 +13,9 @@
 <script>
 export default {
   name: 'Hero',
-  data() {
-    return {
-      
-    }
-  },
   props: {
-    color: { default: 'is-light' }, 
-    size:  { default: 'is-fullheight' }
+    color: { type: String, default: 'is-light' }, 
+    size:  { type: String, default: 'is-fullheight' }
   }
 }
 </script>

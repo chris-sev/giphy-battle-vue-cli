@@ -29,18 +29,17 @@ import './assets/styles.css';
 export default {
   name: 'app',
   mixins: [AuthService],
-  created() {
-    this.handleAuthentication();
-    this.checkSession();
-
-  },
   components: {
     Hero,
     Header,
     Create,
     Battle,
     Leaderboard
-  }
+  },
+  created() {
+    this.handleAuthentication();
+    this.checkSession();
+  },
 }
 </script>
 
