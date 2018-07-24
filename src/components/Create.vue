@@ -45,7 +45,7 @@ export default {
       this.gif = data;
     },
     async createCaptionedGif() {
-      await axios.post(`${this.apiUrl}/create`, {
+      await axios.post(`${this.apiUrl}/`, {
         id:      this.gif.id,
         url:     this.gif.url,
         caption: this.caption,
