@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :isLoggedIn="isLoggedIn" />
 
     <Hero color="is-info">
-      <Create />
+      <Create :isLoggedIn="isLoggedIn"/>
     </Hero>
 
     <Hero color="is-light">
@@ -23,10 +23,17 @@ import Hero from './components/Hero.vue'
 import Create from './components/Create.vue'
 import Battle from './components/Battle.vue'
 import Leaderboard from './components/Leaderboard.vue'
+import AuthService from './auth.js'
 import './assets/styles.css';
 
 export default {
   name: 'app',
+  mixins: [AuthService],
+  created() {
+    this.handleAuthentication();
+    this.checkSession();
+
+  },
   components: {
     Hero,
     Header,

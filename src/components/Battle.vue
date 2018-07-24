@@ -39,9 +39,14 @@ export default {
       const { data } = await axios.get(`${this.apiUrl}/versus`);
       this.gifs      = data;
     },
+    async getLeaderboardGifs() {
+      const { data } = await axios.get(`${this.apiUrl}/leaderboard`);
+      this.gifs = data;
+    },
     async voteOnGif(id) {
       await axios.post(`${this.apiUrl}/vote`, { id });
       this.getBattleGifs(); 
+      this.getLeaderboardGifs();
     }
   },
   created() {

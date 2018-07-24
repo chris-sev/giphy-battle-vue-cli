@@ -23,15 +23,27 @@
           Create The Thing
       </a>
 
+<<<<<<< Updated upstream
+=======
+      <a 
+        class="button is-info is-outlined" 
+        v-if="!isLoggedIn">
+          Login to Create
+      </a>
+
+>>>>>>> Stashed changes
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import AuthService from '../auth.js';
 
 export default {
   name: 'Create',
+  mixins: [AuthService], 
+  props: ['isLoggedIn'],
   data() {
     return {
       apiUrl: process.env.VUE_APP_API,
@@ -45,13 +57,13 @@ export default {
       this.gif = data;
     },
     async createCaptionedGif() {
-      await axios.post(`${this.apiUrl}/create`, {
+      await axios.post(`${this.apiUrl}/`, {
         id:      this.gif.id,
         url:     this.gif.url,
         caption: this.caption,
         votes:   0
       });
-
+      this.caption = '';
       this.getRandomGif();
     }
   },

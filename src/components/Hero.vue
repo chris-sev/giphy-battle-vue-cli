@@ -13,6 +13,11 @@
 <script>
 export default {
   name: 'Hero',
+  data() {
+    return {
+      
+    }
+  },
   props: {
     color: { default: 'is-light' }, 
     size:  { default: 'is-fullheight' }

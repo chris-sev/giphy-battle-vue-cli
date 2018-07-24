@@ -10,8 +10,11 @@
 
       <!-- menu -->
       <div class="navbar-menu is-active">
-        <div class="navbar-end">
-          <a href="/login" class="navbar-item">Login</a>
+        <div class="navbar-end" v-if="!isLoggedIn">
+          <a @click="login" class="navbar-item">Login</a>
+        </div>
+        <div class="navbar-end" v-if="isLoggedIn">
+          <a @click="logout" class="navbar-item">Logout</a>
         </div>
       </div>
 
@@ -21,11 +24,15 @@
 </template>
 
 <script>
+import AuthService from '../auth.js';
+
 export default {
   name: 'Header',
+  mixins: [AuthService],
+  props: ['isLoggedIn'],
   data() {
     return {
-      user: null
+      isLoggedIn: false
     }
   },
   created() {
