@@ -21,15 +21,17 @@
 </template>
 
 <script>
+import AuthService from '../services/AuthService.js';
+
 export default {
   name: 'Header',
-  // mixins: [AuthService],
   data() {
     return {
       user: null
     }
   },
   created() {
+
   }
 }
 </script>

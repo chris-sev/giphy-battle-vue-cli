@@ -57,12 +57,12 @@ export default {
 
 <style>
   .leaderboard {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
   .caption {
-    font-size: 12px;
+    font-size: 16px !important;
   }
 </style>
 

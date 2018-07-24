@@ -44,8 +44,7 @@ export default {
     return {
       apiUrl: process.env.VUE_APP_API,
       gif: null,
-      caption: '',
-      isLoggedIn: true
+      caption: ''
     }
   },
   methods: {
